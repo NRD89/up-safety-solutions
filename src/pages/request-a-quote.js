@@ -39,12 +39,14 @@ const RequestQuote = () => (
       <h4>Email: sales@upsafetysolutions.com</h4>
       <SEO title="Request a Quote" />
       <QuoteForm
+        action="/request-a-quote/?form=success"
         name="Request a Quote"
         method="post"
-        data-netlify-recaptcha="true"
         data-netlify="true"
+        data-netlify-honeypot="bot-field"
       >
         <input type="hidden" name="form-name" value="Request a Quote" />
+        <input type="hidden" name="bot-field" />
         <div data-netlify-recaptcha="true" />
         <p>
           <StyledLabel>
