@@ -227,7 +227,8 @@ export default function Footer() {
             <p>Subscribe to our Newsletter</p>
           </div>
           <div style={{textAlign: `center`,}}>
-            <form style={{margin: `0`}} name="subscribe" method="POST" data-netlify-recaptcha="true" data-netlify="true">
+            <form style={{margin: `0`}} name="Subscribe" method="POST" data-netlify-recaptcha="true" data-netlify="true">
+              <input type="hidden" name="form-name" value="Subscribe" />
               <div data-netlify-recaptcha="true"></div>
               <input style={{height: `2rem`, borderRadius: `3px`, border: `0`}} type="email" name="Enter Your Email Address" size="20" required />
               <Btn type="submit" value="Submit" />

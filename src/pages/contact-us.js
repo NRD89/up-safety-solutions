@@ -39,11 +39,12 @@ const ContactUs = () => (
       <h4>Email: sales@upsafetysolutions.com</h4>
       <SEO title="Contact Us" />
       <ContactForm
-        name="contact"
+        name="Contact"
         method="POST"
         data-netlify-recaptcha="true"
         data-netlify="true"
       >
+        <input type="hidden" name="form-name" value="Contact" />
         <div data-netlify-recaptcha="true" />
         <p>
           <StyledLabel>

@@ -44,6 +44,7 @@ const RequestQuote = () => (
         data-netlify-recaptcha="true"
         data-netlify="true"
       >
+        <input type="hidden" name="form-name" value="Request a Quote" />
         <div data-netlify-recaptcha="true" />
         <p>
           <StyledLabel>
