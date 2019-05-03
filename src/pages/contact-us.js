@@ -40,7 +40,7 @@ const ContactUs = () => (
       <SEO title="Contact Us" />
       <ContactForm
         name="Contact"
-        method="POST"
+        method="post"
         data-netlify-recaptcha="true"
         data-netlify="true"
       >

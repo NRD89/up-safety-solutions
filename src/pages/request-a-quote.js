@@ -40,7 +40,7 @@ const RequestQuote = () => (
       <SEO title="Request a Quote" />
       <QuoteForm
         name="Request a Quote"
-        method="POST"
+        method="post"
         data-netlify-recaptcha="true"
         data-netlify="true"
       >
