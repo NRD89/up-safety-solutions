@@ -31,50 +31,89 @@ const StyledLabel = styled.label`
   font-weight: 600;
 `
 
-const ContactUs = () => (
-  <Layout>
-    <PageTransition>
-      <h1>CONTACT US</h1>
-      <h4>Phone: 999-999-4321</h4>
-      <h4>Email: sales@upsafetysolutions.com</h4>
-      <SEO title="Contact Us" />
-      <ContactForm
-        action="/contact-us/?form=success"
-        name="Contact"
-        method="post"
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
-      >
-        <input type="hidden" name="form-name" value="Contact" />
-        <input type="hidden" name="bot-field" />
-        <div data-netlify-recaptcha="true" />
-        <p>
-          <StyledLabel>
-            Your Name: <StyledInput type="text" name="name" />
-          </StyledLabel>
-        </p>
-        <p>
-          <StyledLabel>
-            Your Email:{" "}
-            <StyledInput
-              style={{ marginLeft: `.2rem` }}
-              type="email"
-              name="email"
-              required
-            />
-          </StyledLabel>
-        </p>
-        <p>
-          <StyledLabel>
-            Message: <StyledTextarea name="message" />
-          </StyledLabel>
-        </p>
-        <p>
-          <Btn type="submit">Send</Btn>
-        </p>
-      </ContactForm>
-    </PageTransition>
-  </Layout>
-)
+const SuccessMessage = styled.div`
+  width: 100%;
+  background-color: #ffd100;
+  text-align: center;
+  color: #fff;
+  animation-name: fade-out;
+  animation-duration: 6s;
+
+  @keyframes fade-out {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+`
+
+const ContactUs = () => {
+  const [submitted, setSubmitted] = React.useState(false)
+
+  React.useEffect(() => {
+    let searchParams = new URLSearchParams(window.location.search)
+    let form = searchParams.get("form")
+
+    if (form === "success") {
+      setSubmitted(true)
+      setTimeout(() => {
+        setSubmitted(false)
+      }, 5000)
+    }
+  }, [])
+
+  return (
+    <Layout>
+      <PageTransition>
+        {submitted && (
+          <SuccessMessage>
+            <h3>Thanks for your submission!</h3>
+          </SuccessMessage>
+        )}
+        <h1>CONTACT US</h1>
+        <h4>Phone: 999-999-4321</h4>
+        <h4>Email: sales@upsafetysolutions.com</h4>
+        <SEO title="Contact Us" />
+        <ContactForm
+          action="/contact-us/?form=success"
+          name="Contact"
+          method="post"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+        >
+          <input type="hidden" name="form-name" value="Contact" />
+          <input type="hidden" name="bot-field" />
+          <div data-netlify-recaptcha="true" />
+          <p>
+            <StyledLabel>
+              Your Name: <StyledInput type="text" name="name" />
+            </StyledLabel>
+          </p>
+          <p>
+            <StyledLabel>
+              Your Email:{" "}
+              <StyledInput
+                style={{ marginLeft: `.2rem` }}
+                type="email"
+                name="email"
+                required
+              />
+            </StyledLabel>
+          </p>
+          <p>
+            <StyledLabel>
+              Message: <StyledTextarea name="message" />
+            </StyledLabel>
+          </p>
+          <p>
+            <Btn type="submit">Send</Btn>
+          </p>
+        </ContactForm>
+      </PageTransition>
+    </Layout>
+  )
+}
 
 export default ContactUs
