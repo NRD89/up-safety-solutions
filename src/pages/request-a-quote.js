@@ -39,7 +39,7 @@ const RequestQuote = () => (
       <h4>Email: sales@upsafetysolutions.com</h4>
       <SEO title="Request a Quote" />
       <QuoteForm
-        name="contact"
+        name="Request a Quote"
         method="POST"
         data-netlify-recaptcha="true"
         data-netlify="true"
