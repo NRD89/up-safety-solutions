@@ -8,13 +8,13 @@ import FeaturedFrontPage from "../components/FeaturedFrontPage"
 import styled from "styled-components"
 import PropTypes from "prop-types"
 
-import smallBanner1 from "../images/small-banner1.jpg"
-import smallBanner2 from "../images/small-banner2.jpg"
-import smallBanner3 from "../images/small-banner3.jpg"
 import SEO from "../components/seo"
-import sliderBanner1 from "../images/sliderbanner-1.jpg"
-import sliderBanner2 from "../images/sliderbanner-2.jpg"
-import sliderBanner3 from "../images/sliderbanner-3.jpg"
+import SliderBanner1 from "../components/sliderBanner1"
+import SliderBanner2 from "../components/sliderBanner2"
+import SliderBanner3 from "../components/sliderBanner3"
+import SmallBanner1 from "../components/smallBanner1"
+import SmallBanner2 from "../components/smallBanner2"
+import SmallBanner3 from "../components/smallBanner3"
 
 const SmallBannerContainer = styled.div`
   display: grid;
@@ -22,12 +22,10 @@ const SmallBannerContainer = styled.div`
   grid-gap: 10px;
   justify-content: space-evenly;
   margin-top: 1.45rem;
+  margin-bottom: 1.45rem;
 
   @media (max-width: 568px) {
-    grid-template-columns: 1fr;
-    justify-items: center;
-    align-content: center;
-    grid-gap: 0;
+    display: block;
   }
 `
 
@@ -37,6 +35,11 @@ const FeaturedProducts = styled.div`
   h2 {
     font-size: 2rem;
     text-transform: uppercase;
+  }
+`
+const SmBannerWrapper = styled.div`
+  @media (max-width: 568px) {
+    margin-bottom: 1.45rem;
   }
 `
 
@@ -49,16 +52,16 @@ const IndexPage = ({
     <>
       <Header />
       <PageTransition>
-        <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+        <SEO title="Home" keywords={[`Up Safety Solutions`, `safety equipment`, `safety equipment store`, `safety equipment suppliers`, `safety equipment companies`, `safety equipment for cannabis industry`, `safety`, `safety clothing`, `safety gear` ]} />
         <Carousel showStatus={false} showThumbs={false}>
           <div>
-            <img src={sliderBanner1} alt="" />
+            <SliderBanner1 />
           </div>
           <div>
-            <img src={sliderBanner2} alt="" />
+            <SliderBanner2 />
           </div>
           <div>
-            <img src={sliderBanner3} alt="" />
+            <SliderBanner3 />
           </div>
         </Carousel>
         <div
@@ -70,42 +73,22 @@ const IndexPage = ({
           }}
         >
           <SmallBannerContainer>
-            <img
-              style={{
-                width: `100%`,
-                maxWidth: `300px`,
-                height: `auto`,
-                marginBottom: `1.45rem`,
-              }}
-              src={smallBanner1}
-              alt=""
-            />
-            <img
-              style={{
-                width: `100%`,
-                maxWidth: `300px`,
-                height: `auto`,
-                marginBottom: `1.45rem`,
-              }}
-              src={smallBanner2}
-              alt=""
-            />
-            <img
-              style={{
-                width: `100%`,
-                maxWidth: `300px`,
-                height: `auto`,
-                marginBottom: `1.45rem`,
-              }}
-              src={smallBanner3}
-              alt=""
-            />
+            <SmBannerWrapper>
+              <SmallBanner1 />
+            </SmBannerWrapper>
+            <SmBannerWrapper>
+              <SmallBanner2 />
+            </SmBannerWrapper>
+            <SmBannerWrapper>
+              <SmallBanner3 />
+            </SmBannerWrapper>
           </SmallBannerContainer>
           <FeaturedProducts>
             <h2>Featured Products</h2>
           </FeaturedProducts>
           <FeaturedFrontPage products={edges} />
         </div>
+
         <Footer />
       </PageTransition>
     </>
@@ -124,7 +107,6 @@ IndexPage.propTypes = {
 
 export const pageQuery = graphql`
   query HomePage {
-    
     products: allPrismicProduct(
       filter: {
         data: {

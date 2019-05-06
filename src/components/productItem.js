@@ -25,6 +25,8 @@ const ItemTitle = styled.p`
   font-size: .9em;
   line-height: 1.45em;
   min-height: 100px;
+  margin-bottom: .5rem;
+  margin-top: 1.45rem;
 `
 
 const ItemPrice = styled.p`

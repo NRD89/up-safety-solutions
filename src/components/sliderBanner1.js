@@ -13,20 +13,25 @@ import Img from "gatsby-image"
  * - `StaticQuery`: https://gatsby.dev/staticquery
  */
 
-const Image = () => (
+const SliderBanner1 = () => (
   <StaticQuery
     query={graphql`
       query {
-        placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
+        sliderBanner1: file(relativePath: { eq: "sliderbanner-1.jpg" }) {
           childImageSharp {
-            fluid(maxWidth: 300) {
-              ...GatsbyImageSharpFluid
+            fluid(maxWidth: 3500, quality: 90) {
+              ...GatsbyImageSharpFluid_withWebp_tracedSVG
             }
           }
         }
       }
     `}
-    render={data => <Img fluid={data.placeholderImage.childImageSharp.fluid} />}
+    render={data => (
+      <Img
+        fluid={data.sliderBanner1.childImageSharp.fluid}
+        alt="Slider Banner One"
+      />
+    )}
   />
 )
-export default Image
+export default SliderBanner1

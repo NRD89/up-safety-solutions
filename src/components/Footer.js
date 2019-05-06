@@ -249,7 +249,9 @@ export default function Footer() {
             </a>
           </div>
           <div style={{justifySelf: `left`}} >
-            <img src={Instagram} alt="Instagram Logo" />
+            <a href="https://www.instagram.com/upsafetysolutions/">
+              <img src={Instagram} alt="Instagram Logo" />
+            </a>
           </div>
         </SocialNetworks>
       </FooterContainer>
