@@ -27,11 +27,19 @@ const ItemTitle = styled.p`
   min-height: 100px;
   margin-bottom: .5rem;
   margin-top: 1.45rem;
+
+  @media (max-width: 568px) {
+    font-size: 1.2em;
+  }
 `
 
 const ItemPrice = styled.p`
   color: #ff5100;
   font-size: .9em;
+
+  @media (max-width: 568px) {
+    font-size: 1.2em;
+  }
 `
 
 export default class ProductItem extends Component {
