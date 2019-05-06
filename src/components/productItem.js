@@ -7,8 +7,9 @@ import Img from "gatsby-image"
 import AddToCartBtn from "./AddToCartBtn"
 
 const GridItem = styled.div`
+  display: grid;
   justify-items: center;
-  justify-content: space-evenly;
+  align-content: space-evenly;
   text-align: center;
   border: 3px solid #f6f7f8;
   border-radius: 5px;
@@ -21,11 +22,14 @@ const ItemLink = styled(Link)`
 `
 
 const ItemTitle = styled.p`
+  font-size: .9em;
   line-height: 1.45em;
+  min-height: 100px;
 `
 
 const ItemPrice = styled.p`
   color: #ff5100;
+  font-size: .9em;
 `
 
 export default class ProductItem extends Component {
