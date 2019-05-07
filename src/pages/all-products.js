@@ -8,6 +8,17 @@ import ProductCatalog from "../components/productCatalog"
 import { Link } from "gatsby"
 import styled from "styled-components"
 
+const CategoryList = styled.ul`
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 0;
+
+  li {
+    padding: 5px .6rem;
+  }
+`
+
 const StyledLink = styled(props => <Link {...props} />)`
   text-decoration: none;
   color: #000;
@@ -21,35 +32,43 @@ const StyledLink = styled(props => <Link {...props} />)`
   }
 `
 
-const Category = ({
-  pageContext: { category },
+const AllProducts = ({
   data: {
-    products: { edges, totalCount },
+    allPrismicProduct: { edges },
   },
   location,
 }) => {
   return (
     <Layout>
       <PageTransition>
-        <SEO title={`${category}`} pathname={location.pathname} />
-        <p><StyledLink to="/">Home</StyledLink>/<StyledLink to="/all-products">All Products</StyledLink></p>
-        <div style={{ textAlign: `center`, marginTop: `4rem`, marginBottom: `2rem` }}>
-        <h1>
-          {totalCount} {totalCount === 1 ? "Product" : "Products"}{" "} in "{category}"
-        </h1>
+        <SEO title="All Products" pathname={location.pathname} />
+        <div
+          style={{
+            textAlign: `center`,
+            marginTop: `4rem`,
+            marginBottom: `2rem`,
+          }}
+        >
+          <h1>All Products</h1>
         </div>
+        <h3>Sort by Category:</h3>
+        <CategoryList>
+          <li><StyledLink to="/category-eyewear">Eyewear</StyledLink></li>
+          <li><StyledLink to="/category-first-aid-medical">First Aid/Medical</StyledLink></li>
+          <li><StyledLink to="/category-head-face-protection">Head &amp; Face Protection</StyledLink></li>
+          <li><StyledLink to="/category-hand-protection">Hand Protection</StyledLink></li>
+          <li><StyledLink to="/category-protective-apparel">Protective Apparel</StyledLink></li>
+          <li><StyledLink to="/category-foot-protection">Foot Protection</StyledLink></li>
+        </CategoryList>
         <ProductCatalog products={edges} />
       </PageTransition>
     </Layout>
   )
 }
 
-export default Category
+export default AllProducts
 
-Category.propTypes = {
-  pageContext: PropTypes.shape({
-    category: PropTypes.string.isRequired,
-  }).isRequired,
+AllProducts.propTypes = {
   data: PropTypes.shape({
     products: PropTypes.shape({
       edges: PropTypes.array.isRequired,
@@ -60,21 +79,8 @@ Category.propTypes = {
 }
 
 export const pageQuery = graphql`
-  query CategoryPage($category: String!) {
-    products: allPrismicProduct(
-      filter: {
-        data: {
-          categories: {
-            elemMatch: {
-              category: {
-                document: { elemMatch: { data: { name: { eq: $category } } } }
-              }
-            }
-          }
-        }
-      }
-    ) {
-      totalCount
+  query AllProductsPage {
+    allPrismicProduct {
       edges {
         node {
           uid

@@ -1,5 +1,6 @@
 import React from "react"
 import PageTransition from "gatsby-v2-plugin-page-transitions"
+import { Link } from "gatsby"
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 import { Carousel } from "react-responsive-carousel"
 import Header from "../components/header"
@@ -52,13 +53,30 @@ const IndexPage = ({
     <>
       <Header />
       <PageTransition>
-        <SEO title="Home" keywords={[`Up Safety Solutions`, `safety equipment`, `safety equipment store`, `safety equipment suppliers`, `safety equipment companies`, `safety equipment for cannabis industry`, `safety`, `safety clothing`, `safety gear` ]} />
+        <SEO
+          title="Home"
+          keywords={[
+            `Up Safety Solutions`,
+            `safety equipment`,
+            `safety equipment store`,
+            `safety equipment suppliers`,
+            `safety equipment companies`,
+            `safety equipment for cannabis industry`,
+            `safety`,
+            `safety clothing`,
+            `safety gear`,
+          ]}
+        />
         <Carousel showStatus={false} showThumbs={false}>
           <div>
-            <SliderBanner1 />
+            <Link to="/all-products">
+              <SliderBanner1 />
+            </Link>
           </div>
           <div>
-            <SliderBanner2 />
+            <Link to="/category-hand-protection">
+              <SliderBanner2 />
+            </Link>
           </div>
           <div>
             <SliderBanner3 />

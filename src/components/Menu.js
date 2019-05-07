@@ -116,12 +116,10 @@ const Menu = () => (
               <SubMenuContainer>
                 <NavSubMenu>
                   <SubMenuItem>
-                    <SubLink to="/category-eyewear">Eyewear</SubLink>
+                    <SubLink to="/all-products">All Products</SubLink>
                   </SubMenuItem>
                   <SubMenuItem>
-                    <SubLink to="/category-first-aid-medical">
-                      First Aid/Medical
-                    </SubLink>
+                    <SubLink to="/category-eyewear">Eyewear</SubLink>
                   </SubMenuItem>
                 </NavSubMenu>
                 <NavSubMenu>
@@ -145,6 +143,13 @@ const Menu = () => (
                   <SubMenuItem>
                     <SubLink to="/category-foot-protection">
                       Foot Protection
+                    </SubLink>
+                  </SubMenuItem>
+                </NavSubMenu>
+                <NavSubMenu>
+                  <SubMenuItem>
+                    <SubLink to="/category-first-aid-medical">
+                      First Aid/Medical
                     </SubLink>
                   </SubMenuItem>
                 </NavSubMenu>
@@ -198,9 +203,7 @@ const Menu = () => (
               <SubMenuContainer>
                 <NavSubMenu>
                   <SubMenuItem>
-                    <SubLink to="/about-us">
-                      About Us
-                    </SubLink>
+                    <SubLink to="/about-us">About Us</SubLink>
                   </SubMenuItem>
                   <SubMenuItem>
                     <SubLink to="/blog">Blog</SubLink>
@@ -221,14 +224,14 @@ const Menu = () => (
                     <SubLink to="/terms-of-use">Terms of Use</SubLink>
                   </SubMenuItem>
                   <SubMenuItem>
-                    <SubLink to="/request-a-quote">
-                      Request a Quote
-                    </SubLink>
+                    <SubLink to="/request-a-quote">Request a Quote</SubLink>
                   </SubMenuItem>
                 </NavSubMenu>
                 <NavSubMenu>
                   <SubMenuItem>
-                    <SubLink to="/custom-order-policy">Custom Order Policy</SubLink>
+                    <SubLink to="/custom-order-policy">
+                      Custom Order Policy
+                    </SubLink>
                   </SubMenuItem>
                 </NavSubMenu>
               </SubMenuContainer>

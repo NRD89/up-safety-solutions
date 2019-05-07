@@ -110,10 +110,6 @@ const SocialNetworks = styled.div`
       line-height: 3rem;
     }
   }
-
-  @media (max-width: 768px) {
-    padding: 2rem 0;
-  }
 `
 
 const ContactBlock = styled.div`
@@ -146,6 +142,7 @@ const OutsideLink = styled.a`
 
   @media (max-width: 768px) {
     margin: 5px auto;
+    width: 100%;
   }
 `
 
@@ -168,6 +165,14 @@ const BottomLine = styled.div`
 
   p {
     margin: 0;
+  }
+`
+
+const EmailIconContainer = styled.div`
+  padding-top: 1.45rem;
+
+  @media (max-width: 768px) {
+    padding-top: 0;
   }
 `
 
@@ -212,18 +217,18 @@ export default function Footer() {
         </FooterSecondaryNav>
         <ContactBlock>
           <h3>We're happy to hear from you!</h3>
-          <OutsideLink href="tel:999-999-4321">
-            <i/> 999-999-4321
+          <OutsideLink href="tel:1-888-958-5650">
+            <i/> 1-888-958-5650
           </OutsideLink>
           <OutsideLink href="mailto:sales@upsafetysolutions.com">sales@upsafetysolutions.com</OutsideLink>
         </ContactBlock>
         <NewsLetter>
           <div style={{textAlign: `center`,}}>
-            <div style={{paddingTop: `1.45rem`,}}>
+            <EmailIconContainer>
               <a href="mailto:sales@upsafetysolutions.com">
                 <img src={Email} alt="Email" />
               </a>
-            </div>
+            </EmailIconContainer>
             <p>Subscribe to our Newsletter</p>
           </div>
           <div style={{textAlign: `center`,}}>
@@ -237,7 +242,7 @@ export default function Footer() {
           </div>
         </NewsLetter>
         <SocialNetworks>
-          <h3>Share our content!</h3>
+          <h3>View and share our content!</h3>
           <div style={{justifySelf: `right`}} >
             <a href="https://www.facebook.com/Up-Safety-Solutions-435208757038430">
               <img src={FaceBook} alt="Facebook Logo" />
