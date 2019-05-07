@@ -68,7 +68,7 @@ const ShippingReturnPolicy = () => {
           <ol>
             <li>
               Contact a&nbsp;Up Safety Solutions representative at&nbsp;{" "}
-              <strong>1800-842-4773</strong> or{" "}
+              <strong>1-888-958-5650</strong> or{" "}
               <a href="mailto:sales@upsafetysolutions.com">
                 <strong>sales@upsafetysolutions.com</strong>
               </a>
@@ -85,7 +85,7 @@ const ShippingReturnPolicy = () => {
           <blockquote>
             <p>
               ATTN: RMA# 123456
-              <br /> <strong>THC Label Solutions</strong>
+              <br /> <strong>Up Safety Solutions</strong>
               <br />
               650 North Rose Dr. #454
               <br />

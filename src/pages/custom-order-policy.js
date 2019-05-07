@@ -17,7 +17,7 @@ const TermsOfUse = () => {
               <strong>Exact sample</strong>: 12 working days upon receipt of
               order.
               <br /> See{" "}
-              <a href="http://www.thermalidtech.com/custom-order-policy#color-match">
+              <a href="#color-match">
                 <em>Color Match Charges.</em>
               </a>
             </li>
@@ -25,7 +25,7 @@ const TermsOfUse = () => {
               <strong>New Orders</strong>: 10 working days after proof approval.
               <br /> See{" "}
               <em>
-                <a href="http://www.thermalidtech.com/custom-order-policy#art-proof">
+                <a href="#art-proof">
                   Art and Proof Information
                 </a>
                 .
@@ -86,7 +86,7 @@ const TermsOfUse = () => {
             </em>
             {" "}for patent or copyright infringement.
           </p>
-          <h3>
+          <h3 id="color-match">
             <strong>Color Match Charges</strong>
           </h3>
           <p>
@@ -94,7 +94,7 @@ const TermsOfUse = () => {
             sample, $95 per color. Perfect color matches are not guaranteed.
           </p>
           <p>&nbsp;</p>
-          <h2>
+          <h2 id="art-proof">
             <strong>Art and Proof Information</strong>
           </h2>
           <p>
